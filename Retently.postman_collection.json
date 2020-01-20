@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "d8acac3e-110e-4f77-9602-9d67929cb525",
+		"name": "Retently",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"login\": \"arsdu24\",\n\t\"password\": \"arsdu24\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				},
+				"description": "Take login and password from user fixtures"
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Thumnail",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjAsImlhdCI6MTU3OTQ3ODczNywiZXhwIjoxNTc5NjUxNTM3fQ.dfg-UIRhi4orrmSzfAz42-gU6E8JXDS8ucSVP_xfCoY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "thumbnail",
+							"type": "file",
+							"src": "/C:/Users/helle/Pictures/IMG-40bc1ae1acc2e18408a0dab885cb15af-V.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/thumbnails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"thumbnails"
+					]
+				},
+				"description": "Authorization header required (barear token from login endpoint)\n\nBody should contains the file (form-data encode type) in the thumbnail field"
+			},
+			"response": []
+		},
+		{
+			"name": "List all thumbnails by sizes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjAsImlhdCI6MTU3OTQ3MTE3NywiZXhwIjoxNTc5NjQzOTc3fQ.pqZBUANW9FYsvYEzDjl4D-H3TJkIYMrl3x9qu400liY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/users/thumbnails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"thumbnails"
+					]
+				},
+				"description": "Authorization header required (barear token from login endpoint)\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Thumbnail by size",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjAsImlhdCI6MTU3OTQ3MTE3NywiZXhwIjoxNTc5NjQzOTc3fQ.pqZBUANW9FYsvYEzDjl4D-H3TJkIYMrl3x9qu400liY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/users/thumbnails/lg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"thumbnails",
+						"lg"
+					]
+				},
+				"description": "Authorization header required (barear token from login endpoint)\n\nResolve the image if there is size in keys of user profile thumbnails object, allowed from the box are (xs|sm|md|lg)"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

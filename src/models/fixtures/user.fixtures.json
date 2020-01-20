@@ -1,0 +1,13 @@
+[
+    {
+        "_id": 0,
+        "login": "arsdu24",
+        "password": "arsdu24",
+        "profile": {
+            "name": "Arsenii Dumitru",
+            "age": 25,
+            "email": "arsdu24@gmail.com",
+            "thumbnails": {}
+        }
+    }
+]
